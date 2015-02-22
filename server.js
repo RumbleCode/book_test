@@ -19,7 +19,7 @@ var cache = {};
 
 // 첫번째: 요청한 파일이 존재하지 않을 때 404 오류를 전송하는 부분.
 function send404(response){
-    response.write(404, {'Content-Type' : 'text/plain'});
+    response.writeHead(404, {'Content-Type' : 'text/plain'});
     response.write('Error 404 : not found');
     response.end();
 } // function send404 END
@@ -100,8 +100,7 @@ server = http.createServer(function (request, response) {
 
 //HTTP 서버 시작
 server.listen(3000, function(){
-     var stime = toString(process.uptime());
-    console.log("Server listening on port 3000." + stime );
+    console.log("Server listening on port 3000.");
 });
 
 
