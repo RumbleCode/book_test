@@ -20,10 +20,9 @@ var cache = {};
 // 첫번째: 요청한 파일이 존재하지 않을 때 404 오류를 전송하는 부분.
 function send404(response){
     response.writeHead(404, {'Content-Type' : 'text/plain'});
-    response.write('Error 404 : not found');
+    response.write('Error 404 : resource not found 파일을 찾을 수 없습니다!');
     response.end();
 } // function send404 END
-
 
 // 두번째: 파일 데이타 서비스 함수, 먼저 적절한 http 헤더를 작성한 다음 파일 내용을 전송.
 function sendFile(response, filePath, fileContents) {
@@ -33,7 +32,6 @@ function sendFile(response, filePath, fileContents) {
         );
     response.end(fileContents);
 } // function sendFile END
-
 
 // 세번째:
 //  다음 함수는 캐시에 파일이 존재하는지 판단하여 캐시에 있다면
@@ -52,7 +50,7 @@ function serveStatic(response, cache, absPath){
         fs.exists(absPath, function(exists){
             if(exists){
                     // 디스크에서 파일 읽기
-                    fs.readFile(absPath, function(err, data){
+                    fs.readFile(absPath, function(err, data)  {
                         if(err){
                             send404(response);
                         } else {
@@ -68,7 +66,6 @@ function serveStatic(response, cache, absPath){
         });
     }
 } //function serveStatic END
-
 
 /**************************************************************
  * HTTP 서버를 생성할 때는 각 HTTP 요청을 어떻게 처리해야 하는지를 정의한
