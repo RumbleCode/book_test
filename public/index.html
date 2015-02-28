@@ -2,24 +2,22 @@
 <html lang="ko">
 <head>
     <title>Chat</title>
-    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css"/>
 </head>
 
 <body>
     <div id="content">
             <!-- 채팅방 이름표시. -->
         <div id="room"></div>
-        
-            <!-- 참여할 수 있는 채팅방목록을 표시함. -->
+            <!-- 참여할 수 있는 채팅방목록을 표시함.-->
         <div id="room-list"></div>
-
             <!-- 채팅 메시지를 표시함. -->
-        <div id="message"></div>
-        
+        <div id="messages"></div>
             <!-- 사용자가 명령어와 메시지를 입력할 Form 구성요소-->
         <form id="send-form">
-            <input id="send-message" />
-            <input id="send-button"type="submit" value="Send" />
+                <!--아래 <lable> ~ </label> 부분은 책에 없음. -->
+            <label for="send-message"></label><input id="send-message" />
+            <input id="send-button" type="submit" value="Send" /><!--대문자 Send 냐?-->
 
             <div id="help">
                 Chat commands:
@@ -28,12 +26,15 @@
                     <li>Join/create room:<code>/Join[room name]</code></li>
                 </ul>
             </div>
+
         </form>
+
     </div>
-    <script src="/socket.io/socket.io.js" type="text/javascript" charset="utf-8"></script>
+
+    <script src="socket.io/socket.io.js" type="text/javascript" charset="utf-8"></script>
     <script src="'http://code.jquery.com/jquery-1.8.0.min.js" type="text/javascript"></script>
-    <script src="/javascripts/chat.js" type="text/javascript" charset="utf-8"></script>
-    <script src="/javascripts/chat.ui.js" type="text/javascript" charset="utf-8"></script>
+    <script src="javascripts/chat.js" type="text/javascript" charset="utf-8"></script>
+    <script src="javascripts/chat_ui.js" type="text/javascript" charset="utf-8"></script>
 </body>
 </html>
 

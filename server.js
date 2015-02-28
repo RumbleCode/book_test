@@ -12,6 +12,7 @@ var  mime = require('mime');
 // 캐시 변수는 캐시 파일 데이터를 다루는데 사용됨.
 var cache = {};
 
+
 /*****************************************************
 * 파일 데이타 보내기와 오류 응답
 * 정적 http 파일 서비스에 필요한 세개의 헬퍼 함수를 작성
@@ -100,8 +101,13 @@ server.listen(3000, function(){
     console.log("Server listening on port 3000.");
 });
 
-
-
+/***********************
+ * Socket.io 서버 구성   *
+ **********************/
+//서버측에서 Socket.io기반 으로 대화 기능에 대한 로직을 제공하는 커스텀 모듈을 가져옴.
+var chatServer = require('./lib/chat_server');
+//Socket.io 서버를 시작함 - 이미 정의한 http서버를 이용하므로 같은 tcp/ip포트를 공유함.
+chatServer.listen(server);
 
 
 
