@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang='en'>
 <head>
+    <meta charset="utf-8"/>
     <title>Chat</title>
-    <link rel="stylesheet" type="text/css" href="stylesheets/style.css"/>
+    <link rel='stylesheet' type='text/css' href='/stylesheets/style.css'></link>
 </head>
 
 <body>
@@ -16,7 +17,7 @@
             <!-- 사용자가 명령어와 메시지를 입력할 Form 구성요소-->
         <form id="send-form">
                 <!--아래 <lable> ~ </label> 부분은 책에 없음. -->
-            <label for="send-message"></label><input id="send-message" />
+            <input id="send-message" />
             <input id="send-button" type="submit" value="Send" /><!--대문자 Send 냐?-->
 
             <div id="help">
@@ -31,10 +32,10 @@
 
     </div>
 
-    <script src="socket.io/socket.io.js" type="text/javascript" charset="utf-8"></script>
-    <script src="'http://code.jquery.com/jquery-1.8.0.min.js" type="text/javascript"></script>
-    <script src="javascripts/chat.js" type="text/javascript" charset="utf-8"></script>
-    <script src="javascripts/chat_ui.js" type="text/javascript" charset="utf-8"></script>
+    <script src='/socket.io/socket.io.js' type='text/javascript'></script>
+    <script src='http://code.jquery.com/jquery-1.8.0.min.js' type='text/javascript'></script>
+    <script src='/javascripts/chat.js' type='text/javascript'></script>
+    <script src='/javascripts/chat_ui.js' type='text/javascript'></script>
 </body>
 </html>
 
