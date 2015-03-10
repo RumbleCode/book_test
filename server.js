@@ -97,8 +97,8 @@ server = http.createServer(function (request, response) {
 });
 
 //HTTP 서버 시작
-server.listen(3000, function(){
-    console.log("Server listening on port 3000.");
+server.listen(80,function(){
+    console.log("cloudServer 115.68.182.84:80 start!");
 });
 
 /***********************
